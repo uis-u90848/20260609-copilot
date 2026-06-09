@@ -1,0 +1,176 @@
+:root {
+    --bg-gradient-start: #7c6ff0;
+    --bg-gradient-end: #6a5ae0;
+    --card-bg: #fdfdff;
+    --text-main: #2f2f3a;
+    --text-muted: #9a9aa8;
+    --accent: #7c6ff0;
+    --accent-dark: #6a5ae0;
+    --ring-track: #e9e9f2;
+    --progress-bg: #eceaf8;
+    --progress-value: #6a5ae0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    padding: 24px;
+}
+
+.app {
+    width: 100%;
+    max-width: 380px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 28px 28px 24px;
+    box-shadow: 0 20px 50px rgba(40, 30, 90, 0.25);
+}
+
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.window-controls {
+    display: flex;
+    gap: 14px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.window-controls__btn {
+    cursor: default;
+    user-select: none;
+}
+
+.mode-label {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.timer {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 28px;
+}
+
+.timer__ring {
+    display: block;
+}
+
+.timer__track {
+    fill: none;
+    stroke: var(--ring-track);
+    stroke-width: 14;
+}
+
+.timer__progress {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.3s linear;
+}
+
+.timer__time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    font-variant-numeric: tabular-nums;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn--primary {
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    box-shadow: 0 8px 18px rgba(106, 90, 224, 0.4);
+}
+
+.btn--outline {
+    color: var(--accent-dark);
+    background: #fff;
+    border: 2px solid var(--accent);
+}
+
+.progress {
+    background: var(--progress-bg);
+    border-radius: 14px;
+    padding: 18px 20px;
+}
+
+.progress__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 14px;
+}
+
+.progress__stats {
+    display: flex;
+}
+
+.stat {
+    flex: 1;
+    text-align: center;
+}
+
+.stat__value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--progress-value);
+    font-variant-numeric: tabular-nums;
+}
+
+.stat__label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
